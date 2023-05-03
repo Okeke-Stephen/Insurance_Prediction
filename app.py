@@ -68,7 +68,7 @@ import pandas as pd
 import streamlit as st 
 from pycaret.regression import load_model, predict_model 
 
-sys.setrecursionlimit(15000)
+sys.setrecursionlimit(10000)
 st.set_page_config(page_title = "Insurance Charges Prediction")
 
 @st.cache_data(allow_output_mutation=True)
