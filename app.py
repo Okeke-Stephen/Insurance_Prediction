@@ -94,13 +94,13 @@ with col1:
     sex = form.radio('Sex', ['Male', 'Female'])
     
 with col2:
-bmi = form.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
+    bmi = form.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
 
 with col1:
     children = form.slider('Children', min_value=0, max_value=10, value=0)
 
 with col2:
-region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
+    region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
 
 with col1:
     region = form.selectbox('Region', region_list)
