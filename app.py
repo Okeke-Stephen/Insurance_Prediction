@@ -62,6 +62,7 @@ if st.button("Predict"):
     
 
 import pickle
+import sys
 from streamlit_option_menu import option_menu   
 import pandas as pd 
 import streamlit as st 
