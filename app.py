@@ -17,10 +17,10 @@ with col1:
   age = st.text_input('Age')
         
 with col2:
-        if st.checkbox('sex'):
-            smoker = 'male'
+        if st.checkbox('Sex'):
+            sex = 'male'
         else:
-            smoker = 'female' 
+            sex = 'female' 
     
 with col3:
   bmi = st.text_input('Body Mass Index')
@@ -36,12 +36,12 @@ with col2:
     
 with col3:
   region = st.text_input('Region')
-  if (region == 'region_northwest'):
+  if (region == 'Region Northwest'):
     region_northwest = 1
     region_southeast = 0
     region_southwest = 0
         
-  elif (region == 'region_southeast'):
+  elif (region == 'Region Southeast'):
       region_northwest = 0
       region_southeast = 1
       region_southwest = 0
