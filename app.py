@@ -71,7 +71,7 @@ from pycaret.regression import load_model, predict_model
 sys.setrecursionlimit(10000)
 st.set_page_config(page_title = "Insurance Charges Prediction")
 
-@st.cache_data(allow_output_mutation=True)
+#@st.cache_data(allow_output_mutation=True)
 def get_model():
     return load_model('insurance_model')
 
