@@ -1,3 +1,4 @@
 streamlit
+pandas
 streamlit-option-menu
 pycaret==3.0.0rc9
