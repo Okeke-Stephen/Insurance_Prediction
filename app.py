@@ -11,7 +11,7 @@ st.title('Insurance Predictive Framework')
     
     
 # getting the input data from the user
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
     
 with col1:
   age = st.text_input('Age')
@@ -19,16 +19,16 @@ with col1:
 with col2:
    sex = st.text_input('Sex')
 
-with col3:
+with col1:
   bmi = st.text_input('Body Mass Index')
     
-with col1:
+with col2:
   children = st.sidebar.slider('Children', min_value=0, max_value=10, value=0, step = 1)
     
-with col2:
+with col1:
     smoker = st.text_input('Smoker')
     
-with col3:
+with col2:
   region = st.text_input('Region')
   if (region == 'Region Northwest'):
     region_northwest = 1
