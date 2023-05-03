@@ -17,11 +17,8 @@ with col1:
   age = st.text_input('Age')
         
 with col2:
-        if st.checkbox('Sex'):
-            sex = 'male'
-        else:
-            sex = 'female' 
-    
+   sex = st.text_input('Sex')
+
 with col3:
   bmi = st.text_input('Body Mass Index')
     
@@ -29,10 +26,7 @@ with col1:
   children = st.sidebar.slider('Children', min_value=0, max_value=10, value=0, step = 1)
     
 with col2:
-        if st.checkbox('Smoker'):
-            smoker = 'yes'
-        else:
-            smoker = 'no'
+    smoker = st.text_input('Smoker')
     
 with col3:
   region = st.text_input('Region')
