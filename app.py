@@ -18,13 +18,12 @@ with col1:
         
 with col2:
    sex = st.text_input('Sex')
-  if (sex == 'male'):
+   if (sex == 'male'):
     male = 0
+    emale = 
+   else:
     female = 2
-
-  else:
-     female = 2
-     male = 0
+    male = 0
 
 with col1:
   bmi = st.text_input('Body Mass Index')
