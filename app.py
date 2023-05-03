@@ -20,7 +20,7 @@ with col2:
    sex = st.text_input('Sex')
    if (sex == 'male'):
     male = 0
-    emale = 
+    female = 2
    else:
     female = 2
     male = 0
