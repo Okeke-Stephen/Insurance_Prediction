@@ -4,7 +4,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # loading the saved models
-ins_model = pickle.load(open('insurance_model.sav.pkl', 'rb'))
+ins_model = pickle.load(open('insurance_model.sav', 'rb'))
 
 st.title('Insurance Charges Prediction')
 st.markdown('Enter Values to Predict your Insurance Charge')
