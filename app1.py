@@ -1,48 +1,41 @@
-import pandas as pd 
-import streamlit as st 
-from pycaret.regression import load_model, predict_model 
+import streamlit as st
+import pandas as pd
+import numpy as np
+from prediction import predict
 
-import sys
-sys.setrecursionlimit(500000)
+# loading the saved models
+house_model = pickle.load(open('insurance_model.sav.pkl', 'rb'))
 
-st.set_page_config(page_title = "Insurance Charges Prediction")
+st.title('Insurance Charges Prediction')
+st.markdown('Enter Values to Predict your Insurance Charge')
 
-def get_model():
-    return load_model('insurance_model')
+st.header("Insurance Charges Predictive System")
+col1, col2 = st.columns(2)
 
-def predict_model(model, data):
-    predictions = predict_model(model, data=data)
-    return predictions['Label'][0]
+with col1:
+	age = form.number_input('Age', min_value=1, max_value=100, value=25)
 
-model  = get_model()
+with col2:
+	sex = form.radio('Sex', ['Male', 'Female'])
 
-st.title("Insurance Charges Prediction")
+with col1:
+	bmi = form.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
 
-form = st.form('charges')
-age = form.number_input('Age', min_value=1, max_value=100, value=25)
-sex = form.radio('Sex', ['Male', 'Female'])
-bmi = form.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
-children = form.slider('Children', min_value=0, max_value=10, value=0)
-region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
-region = form.selectbox('Region', region_list)
-if form.checkbox('Smoker'):
-    smoker = 'yes'
-else:
-    smoker = 'no'
+with col2:
+	children = form.slider('Children', min_value=0, max_value=10, value=0)
+
+with col1:
+	region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
+	region = form.selectbox('Region', region_list)
+
+with col2:
+	if form.checkbox('Smoker'):
+    		smoker = 'yes'
+	else:
+    		smoker = 'no'
     
-predict_button = form.form_submit_button('Predict')
-
-input_dict = {
-    'age':age,
-    'sex':sex.lower(),
-    'bmi':bmi,
-    'children': children,
-    'smoker': smoker,
-    'region': region.lower()
-}
-
-input_df = pd.DataFrame([input_dict])
-
-if predict_button:
-    output = predict_model(model, input_df)
-    st.success("The predicted charges are ${: .2f}".format(output))
+st.text('')
+if st.button("Predict Charge"):
+    result = predict(
+        np.array([[age, sex, bmi, children, region, smoker]]))
+    st.text('The house price estimate is:' + '$' + result[0])
