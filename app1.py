@@ -13,23 +13,23 @@ st.header("Insurance Charges Predictive System")
 col1, col2 = st.columns(2)
 
 with col1:
-	age = form.number_input('Age', min_value=1, max_value=100, value=25)
+	age = st.number_input('Age', min_value=1, max_value=100, value=25)
 
 with col2:
-	sex = form.radio('Sex', ['Male', 'Female'])
+	sex = st.radio('Sex', ['Male', 'Female'])
 
 with col1:
-	bmi = form.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
+	bmi = st.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
 
 with col2:
-	children = form.slider('Children', min_value=0, max_value=10, value=0)
+	children = st.slider('Children', min_value=0, max_value=10, value=0)
 
 with col1:
 	region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
-	region = form.selectbox('Region', region_list)
+	region = st..selectbox('Region', region_list)
 
 with col2:
-	if form.checkbox('Smoker'):
+	if st.checkbox('Smoker'):
     		smoker = 'yes'
 	else:
     		smoker = 'no'
