@@ -17,7 +17,7 @@ with col1:
 	age = st.number_input('Age', min_value=1, max_value=100, value=25)
 
 with col2:
-	sex = st.radio('Sex', ['Male', 'Female'])
+	sex = st.selectbox('Sex', ['male', 'female'])
 
 with col1:
 	bmi = st.number_input('BMI', min_value=10.0, max_value=50.0, value=20.0)
