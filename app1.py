@@ -1,10 +1,10 @@
+import pickle
+import sklearn
 import streamlit as st
-import pandas as pd
-import numpy as np
-from prediction import predict
+from streamlit_option_menu import option_menu
 
 # loading the saved models
-house_model = pickle.load(open('insurance_model.sav.pkl', 'rb'))
+ins_model = pickle.load(open('insurance_model.sav.pkl', 'rb'))
 
 st.title('Insurance Charges Prediction')
 st.markdown('Enter Values to Predict your Insurance Charge')
@@ -36,6 +36,6 @@ with col2:
     
 st.text('')
 if st.button("Predict Charge"):
-    result = predict(
+    result = ins_model.predict(
         np.array([[age, sex, bmi, children, region, smoker]]))
     st.text('The house price estimate is:' + '$' + result[0])
