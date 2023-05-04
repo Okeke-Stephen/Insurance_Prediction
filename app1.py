@@ -26,7 +26,7 @@ with col2:
 
 with col1:
 	region_list = ['Southwest', 'Northwest', 'Northeast', 'Southeast']
-	region = st..selectbox('Region', region_list)
+	region = st.selectbox('Region', region_list)
 
 with col2:
 	if st.checkbox('Smoker'):
