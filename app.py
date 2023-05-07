@@ -62,4 +62,4 @@ y_pred = model.predict(df)
 
 if st.button("Show Result"):
     # col1,col2, col3,col4 = st.columns(4)
-    st.header(f"{round(y_pred[0],2)} INR")
+    st.header(f"{round(y_pred[0],2)} NZD")
